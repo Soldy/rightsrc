@@ -1,4 +1,4 @@
-const $right = new require('right').base();
+const $right = new require('rightrc').base();
 
 const rightsBase = function(){
     this.getPowerRead = function(){
