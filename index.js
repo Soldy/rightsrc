@@ -85,6 +85,13 @@ const rightsBase = function(){
     this.listGrant = function(){
         return _grant.list();
     };
+    this.all = functioni(){
+        return {
+            'read'  : _read.all(),
+            'write' : _write.all(),
+            'grant' : _grant.all()
+        }
+    }
     let _read  = new $right();
     let _write = new $right();
     let _grant = new $right();
