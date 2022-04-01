@@ -1,6 +1,6 @@
 {
   "name": "rightsrc",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "object rights manager",
   "main": "index.js",
   "scripts": {
@@ -18,6 +18,10 @@
   },
   "homepage": "https://github.com/Soldy/rightsrc#readme",
   "devDependencies": {
-    "nanoTest": "^0.9.9-beta17c"
+    "nanoTest": "0.9.9-beta28"
+  },
+  "dependencies": {
+    "rightrc": "0.0.4",
+    "setuprc": "0.9.9-beta20"
   }
 }
