@@ -1,18 +1,17 @@
 'use strict';
 const fs = require('fs');
-const path = require('path');
 const nanoTest  = new (require('nanoTest')).test({
     'progress_bar' : false,
     'debug_print'  : 'long'
 });
 
 const _options = {
-        'read_power' : 90,
-        'write_power' : 45,
-        'grant_power' : 15,
-        'read_file'   : 'test/read_right.jsprc',
-        'write_file'  : 'test/write_right.jsprc',
-        'grant_file'  : 'test/grant_right.jsprc'
+    'read_power' : 90,
+    'write_power' : 45,
+    'grant_power' : 15,
+    'read_file'   : 'test/read_right.jsprc',
+    'write_file'  : 'test/write_right.jsprc',
+    'grant_file'  : 'test/grant_right.jsprc'
 };
 const $rightsrc = new (require('./index.js')).base(_options);
 nanoTest.add(
@@ -206,18 +205,6 @@ nanoTest.add(
 );
 
 nanoTest.add(
-    'delete read store file',
-    {
-        'function':async function(){
-           await fs.unlinkSync('test/read_right.jsprc');
-           return true;
-        },
-        'options':[]
-    },
-    '!==',
-    false
-);
-nanoTest.add(
     'delRead not in the list',
     {
         'function':$rightsrc.delRead,
@@ -271,13 +258,25 @@ nanoTest.add(
     '===',
     true
 );
+nanoTest.add(
+    'delete read store file',
+    {
+        'function':async function(){
+            await fs.unlinkSync('test/read_right.jsprc');
+            return true;
+        },
+        'options':[]
+    },
+    '!==',
+    false
+);
 
 nanoTest.add(
     'delete write store file',
     {
         'function':async function(){
-           await fs.unlinkSync('test/write_right.jsprc');
-           return true;
+            await fs.unlinkSync('test/write_right.jsprc');
+            return true;
         },
         'options':[]
     },
@@ -288,8 +287,8 @@ nanoTest.add(
     'delete grant store file',
     {
         'function':async function(){
-           await fs.unlinkSync('test/grant_right.jsprc');
-           return true;
+            await fs.unlinkSync('test/grant_right.jsprc');
+            return true;
         },
         'options':[]
     },
