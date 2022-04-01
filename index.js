@@ -106,14 +106,14 @@ const rightsBase = function(settings){
     this.import = function(in_){
         return _import(in_);
 
-    }
+    };
     this.all = function(){
         return {
             'read'  : _read.all(),
             'write' : _write.all(),
             'grant' : _grant.all()
-        }
-    }
+        };
+    };
     const _setup = new $setuprc({
         'read_power' : {
             'type'    : 'integer',
@@ -148,18 +148,18 @@ const rightsBase = function(settings){
         if(typeof in_.read !== 'undefined')
             _importRead(in_.read);
         if(typeof in_.write !== 'undefined')
-           _importWrite(in_.read);
+            _importWrite(in_.read);
         
-    }
+    };
     const _importGrant = function(in_){
-        _grant.import(in_.power, in_id);
-    }
+        _grant.import(in_.power, in_.id);
+    };
     const _importRead = function(in_){
-        _read.import(in_.power, in_id);
-    }
+        _read.import(in_.power, in_.id);
+    };
     const _importWrite = function(in_){
-        _write.import(in_.power, in_id);
-    }
+        _write.import(in_.power, in_.id);
+    };
 
     // construtor
     _setup.setup(settings);
